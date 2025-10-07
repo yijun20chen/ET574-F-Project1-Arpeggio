@@ -4,10 +4,10 @@ from tracker import view_all, view_summary
 def main():
     print("Welcome to Grade Tracker! ")
     print("""
-    1. Add Grade 
-    2. View All Grades 
-    3. View Summary 
-    4. Exit 
+1. Add Grade 
+2. View All Grades 
+3. View Summary 
+4. Exit 
     """)
 
     return int(input("Enter choice: "))
