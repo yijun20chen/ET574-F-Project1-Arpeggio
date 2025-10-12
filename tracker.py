@@ -1,8 +1,12 @@
+import data
+
+
 def add_grade():
     assignment_name = input("Enter assignment name: ")
     while not assignment_name.strip():
         print("Assignment name cannot be empty.")
         assignment_name = input("Enter assignment name: ")
+    data.assignment_names.append(assignment_name)
 
     while True:
         score_input = input("Enter assignment score: ")
@@ -15,19 +19,27 @@ def add_grade():
         except ValueError:
             print("Invalid score. Please enter a numeric value.")
 
-    print(f"Assignment '{assignment_name}' with score {score} added.")
+    data.scores.append(score)
+    print("Grade Recorded!")
     return assignment_name, score
 
-def view_all(assignments):
-    if not assignments:
-        print("No assignments recorded.")
+def view_all():
+    if not data.assignment_names:
+        print('No grades recorded.')
         return
-def view_summary(assignments):
+    print('\nAll Grades:')
+    for i, (name, score) in enumerate(zip(data.assignment_names, data.scores), 1):
+        print(f'{i}. {name}: {score}')
+def view_summary():
+    """Wrapper for display_summary to allow future extension or interface consistency."""
+    assignments = dict(zip(data.assignment_names, data.scores))
+    return display_summary(assignments)
+
+def display_summary(assignments):
     """Display a summary of all assignments and their scores."""
     if not assignments:
         print("No assignments recorded.")
         return
-    print("Assignments and scores:")
     for name, score in assignments.items():
         print(f"- {name}: {score}")
     scores = list(assignments.values())
@@ -39,3 +51,6 @@ def view_summary(assignments):
     print("Assignments and scores:")
     for name, score in assignments.items():
         print(f"- {name}: {score}")
+        print("- Average score: N/A")
+        print("- Highest score: N/A")
+        print("- Lowest score: N/A")
