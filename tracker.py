@@ -18,8 +18,24 @@ def add_grade():
     print(f"Assignment '{assignment_name}' with score {score} added.")
     return assignment_name, score
 
-def view_all():
-    pass
-
-def view_summary():
-    pass
+def view_all(assignments):
+    if not assignments:
+        print("No assignments recorded.")
+        return
+def view_summary(assignments):
+    """Display a summary of all assignments and their scores."""
+    if not assignments:
+        print("No assignments recorded.")
+        return
+    print("Assignments and scores:")
+    for name, score in assignments.items():
+        print(f"- {name}: {score}")
+    scores = list(assignments.values())
+    print("Summary:")
+    print(f"- Total assignments: {len(assignments)}")
+    print(f"- Average score: {sum(scores) / len(scores):.2f}")
+    print(f"- Highest score: {max(scores)}")
+    print(f"- Lowest score: {min(scores)}")
+    print("Assignments and scores:")
+    for name, score in assignments.items():
+        print(f"- {name}: {score}")

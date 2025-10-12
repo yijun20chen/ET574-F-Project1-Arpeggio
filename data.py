@@ -1,2 +1,2 @@
-assignment_names = []
-scores = []
+def add_grade():
+    pass
