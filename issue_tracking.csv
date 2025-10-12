@@ -1,2 +1,6 @@
 ID,TYPE,COMMIT #,STATUS,DESCRIPTION,REPORTER,ASSIGNEE,DUE,CREATED,RESOLVED,NOTES
 1,task,f6638d4,closed,Main file completed,,Yi Jun,12-Oct,7-Oct,,
+2,task,afb5886,open,Grade function completed,,Isiah,12-Oct,8-Oct,,
+3,issue,0e83389,open,Tracker Grade function fix,Isiah,Isiah,12-Oct,12-Oct,12-Oct,
+4,issue,d4fe1f1,closed,Data Fix,Isiah,Isiah,12-Oct,12-Oct,12-Oct,
+5,issue,106fac8,closed,Tracker input fixed,Isiah,Isiah,12-Oct,12-Oct,12-Oct,
